@@ -88,3 +88,80 @@ function getKaikei(tanka, kosuu) {
 }
 
 console.log(getKaikei(100, 20));
+
+const displayMessage = function () {
+    console.log('Timeout');
+}
+setTimeout(displayMessage, 3000);
+
+// function greeting(name) {
+//     console.log('hello' + name + '-san');
+// }
+
+// function inputUserName(callback) {
+//     let name = prompt('あなたのお名前を入力してください');
+//     callback(name);
+// }
+
+// inputUserName(greeting);
+
+let colors = ['Red', 'Green', 'Blue'];
+console.log(colors);
+console.log(colors[1]);
+
+colors.push('Black');
+console.log(colors);
+
+colors.unshift('Black');
+console.log(colors);
+
+colors[1] = 'Aka';
+console.log(colors);
+
+let insertArr = ['a', 'b', 'c'];
+insertArr.splice(1, 0, 'D');
+console.log(insertArr);
+
+let arr1 = ['a', 'b', 'c'];
+let arr2 = ['d', 'e', 'f'];
+let margeArr = arr1.concat(arr2);
+console.log(margeArr);
+
+let user = new Object();
+user.name = 'Takaaki';
+user.gender = 'man';
+user.birthyear = 1993;
+console.log(user);
+
+let user2 = { name: 'hirokazu', gender: 'man', birthyear: 2002 }
+console.log(user2)
+
+let user3 = {
+    name: 'hatsumi',
+    gender: 'woman',
+    birthYear: '1995',
+    calcAge: function (thisYear) {
+        return thisYear - this.birthYear;
+    }
+}
+console.log(user3.calcAge(2023));
+
+// let btn = document.getElementById('triggerButton');
+// btn.addEventListener('click', function (e) {
+//     //alert('clicked!');
+//     let headerTitle = document.getElementById('headerTitle');
+//     console.log(headerTitle);
+//     console.log(headerTitle.textContent);
+// }, false);
+
+let btn = document.getElementById('triggerButton');
+btn.addEventListener('click', function (e) {
+    //alert('clicked!');
+    let inputColorName = document.getElementById('inputColorName');
+    let colorNameText = inputColorName.value;
+    let inputName = inputColorName.getAttribute('name');
+    let showText = document.getElementById('showText');
+    let headerTitle = document.getElementById('headerTitle');
+    //headerTitle.textContent = "タイトルが変更されました。";
+    showText.textContent = `name属性: ${inputName}, 入力されたテキスト: ${colorNameText}`;
+}, false);
