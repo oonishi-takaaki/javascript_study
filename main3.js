@@ -19,7 +19,6 @@ addButton.addEventListener('click', function (e) {
     languageList.appendChild(listItem);
     //入力欄をクリア
     inputLanguage.value = '';
-
 }, false);
 
 //削除
